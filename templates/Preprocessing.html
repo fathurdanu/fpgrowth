@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
+    <title>Zinzer - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename='assets/images/favicon.ico')}}"
+    />
+
+    <link
+      href="{{url_for('static', filename='assets/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{url_for('static', filename='assets/css/icons.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="{{url_for('static', filename='assets/css/style.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body class="fixed-left">
+    <!-- Loader -->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+      <!-- ========== Left Sidebar Start ========== -->
+      <div class="left side-menu">
+        <button
+          type="button"
+          class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect"
+        >
+          <i class="mdi mdi-close"></i>
+        </button>
+
+        <div class="left-side-logo d-block d-lg-none">
+          <div class="text-center">
+            <a href="index.html" class="logo"
+              ><img
+                src="{{ url_for('static', filename='assets/images/logo_dark.png')}}"
+                height="20"
+                alt="logo"
+            /></a>
+          </div>
+        </div>
+
+        <div class="sidebar-inner slimscrollleft">
+          <div id="sidebar-menu">
+            <ul>
+              <li class="menu-title">Main</li>
+
+              <li>
+                <a href="{{url_for('prepro')}}" class="waves-effect">
+                  <i class="dripicons-home"></i>
+                  <span> Preprocessing </span>
+                </a>
+              </li>
+              <li>
+                <a href="{{url_for('upload')}}" class="waves-effect">
+                  <i class="dripicons-briefcase"></i>
+                  <span> Upload </span>
+                </a>
+              </li>
+
+              <!-- <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Upload </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="ui-alerts.html">Alerts</a></li>
+                                    <li><a href="ui-badge.html">Badge</a></li>
+                                </ul>
+                            </li> -->
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <!-- end sidebarinner -->
+      </div>
+      <!-- Left Sidebar End -->
+
+      <!-- Start right Content here -->
+
+      <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+          <!-- Top Bar Start -->
+          <div class="topbar">
+            <div class="topbar-left d-none d-lg-block">
+              <div class="text-center">
+                <a href="index.html" class="logo"
+                  ><img
+                    src="{{url_for('static', filename='assets/images/logo.png')}}"
+                    height="22"
+                    alt="logo"
+                /></a>
+              </div>
+            </div>
+
+            <nav class="navbar-custom">
+              <!-- Search input -->
+              <div class="search-wrap" id="search-wrap">
+                <div class="search-bar">
+                  <input
+                    class="search-input"
+                    type="search"
+                    placeholder="Search"
+                  />
+                  <a
+                    href="#"
+                    class="close-search toggle-search"
+                    data-target="#search-wrap"
+                  >
+                    <i class="mdi mdi-close-circle"></i>
+                  </a>
+                </div>
+              </div>
+
+              <ul class="list-inline menu-left mb-0">
+                <li class="list-inline-item">
+                  <button
+                    type="button"
+                    class="button-menu-mobile open-left waves-effect"
+                  >
+                    <i class="mdi mdi-menu"></i>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Top Bar End -->
+
+          <div class="page-content-wrapper">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="page-title-box">
+                    <div class="row align-items-center">
+                      <div class="col-md-8">
+                        <h4 class="page-title m-0">PREPROCESSING</h4>
+                      </div>
+                      <div class="col-md-4"></div>
+                      <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                  </div>
+                  <!-- end page-title-box -->
+                </div>
+              </div>
+              <!-- end page title -->
+              <div class="row">
+                <div class="col-12">
+                  <div class="card m-b-30">
+                    <div class="card-body">
+                      <h4 class="mt-0 header-title">Textual inputs</h4>
+                      <p class="text-muted m-b-30 font-14">
+                        Here are examples of
+                        <code class="highlighter-rouge">.form-control</code>
+                        applied to each textual HTML5
+                        <code class="highlighter-rouge">&lt;input&gt;</code>
+                        <code class="highlighter-rouge">type</code>.
+                      </p>
+                      <form
+                        action="{{url_for('hasil_prepro')}}"
+                        method="POST"
+                        enctype="multipart/form-data"
+                      >
+                        <div class="form-group row">
+                          <label
+                            for="example-text-input"
+                            class="col-sm-2 col-form-label"
+                            >Proses File Data Penjualan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              class="form-control"
+                              type="file"
+                              name = "file"
+                              id="data_penjualan"
+                            />
+                          </div>
+                        </div>
+                        <div class="text-center m-t-15">
+                          <button
+                            type="submit"
+                            class="btn btn-primary waves-effect waves-light"
+                          >
+                            Save
+                          </button>
+                          <!-- <input type = "submit" value="Save" class="btn btn-primary waves-effect waves-light"/> -->
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- container fluid -->
+          </div>
+          <!-- Page content Wrapper -->
+        </div>
+        <!-- content -->
+
+        <footer class="footer">
+          © 2019 - 2020 Zinzer
+          <span class="d-none d-md-inline-block">
+            - Crafted with <i class="mdi mdi-heart text-danger"></i> by
+            Themesdesign.</span
+          >
+        </footer>
+      </div>
+      <!-- End Right content here -->
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/modernizr.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/detect.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/fastclick.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.slimscroll.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.blockUI.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/waves.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.nicescroll.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.scrollTo.min.js')}}"></script>
+
+    <!-- App js -->
+    <script src="{{ url_for('static', filename='assets/js/app.js')}}"></script>
+  </body>
+</html>
